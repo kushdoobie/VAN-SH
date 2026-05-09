@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · VAN!SH</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#0e080f;--white:#e8e4dc;--ash:#a09990;--red:#c0392b;--violet:#1a0a1e;--grain-opacity:0.55}
+html{scroll-behavior:smooth}
+body{background:#0a040e;color:#ffffff;font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:crosshair}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");background-size:180px;pointer-events:none;z-index:2;opacity:0.35}
+body::after{content:'';position:fixed;inset:0;background:
+      repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.02) 2px,rgba(0,0,0,0.02) 4px);pointer-events:none;z-index:1}
+    .bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+      background:
+        radial-gradient(ellipse 55% 45% at 15% 15%, rgba(180,0,120,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 85% 10%, rgba(255,0,150,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 85%, rgba(160,0,80,0.15) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 40% at 10% 85%, rgba(80,0,200,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(60,0,40,0.4) 0%, transparent 70%),
+        #0a040e;
+      animation: glowshift 12s ease-in-out infinite alternate;
+    }
+    @keyframes glowshift {
+      0%   {
+        background:
+          radial-gradient(ellipse 55% 45% at 15% 15%, rgba(180,0,120,0.18) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 40% at 85% 10%, rgba(255,0,150,0.15) 0%, transparent 60%),
+          radial-gradient(ellipse 60% 50% at 80% 85%, rgba(160,0,80,0.15) 0%, transparent 65%),
+          radial-gradient(ellipse 45% 40% at 10% 85%, rgba(80,0,200,0.12) 0%, transparent 60%),
+          radial-gradient(ellipse 70% 60% at 50% 50%, rgba(60,0,40,0.4) 0%, transparent 70%),
+          #0a040e;
+      }
+      50%  {
+        background:
+          radial-gradient(ellipse 60% 50% at 25% 20%, rgba(200,0,100,0.2) 0%, transparent 65%),
+          radial-gradient(ellipse 45% 35% at 75% 15%, rgba(255,0,150,0.17) 0%, transparent 60%),
+          radial-gradient(ellipse 55% 45% at 70% 80%, rgba(180,0,60,0.17) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 45% at 15% 75%, rgba(100,0,220,0.14) 0%, transparent 60%),
+          radial-gradient(ellipse 70% 60% at 50% 50%, rgba(60,0,40,0.4) 0%, transparent 70%),
+          #0a040e;
+      }
+      100% {
+        background:
+          radial-gradient(ellipse 50% 40% at 10% 10%, rgba(160,0,140,0.16) 0%, transparent 65%),
+          radial-gradient(ellipse 55% 45% at 90% 20%, rgba(255,0,150,0.14) 0%, transparent 60%),
+          radial-gradient(ellipse 65% 55% at 85% 90%, rgba(140,0,100,0.18) 0%, transparent 65%),
+          radial-gradient(ellipse 40% 35% at 5% 90%, rgba(60,0,180,0.13) 0%, transparent 60%),
+          radial-gradient(ellipse 70% 60% at 50% 50%, rgba(60,0,40,0.4) 0%, transparent 70%),
+          #0a040e;
+      }
+    }
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;isolation:isolate;display:flex;justify-content:space-between;align-items:center;padding:24px 52px}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,8,15,0.97) 0%,transparent 100%);pointer-events:none}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.3em;color:#ffffff;text-decoration:none;position:relative;z-index:1}
+.nav-logo span{color:#ffffff}
+.nav-links{display:flex;gap:40px;list-style:none;position:relative;z-index:1}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.2em;color:rgba(255,255,255,0.55);text-decoration:none;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover{color:#ffffff}.nav-links a.nav-active{color:#ffffff !important}
+
+/* HERO */
+.hero{z-index:3;position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(0.48) contrast(1.08);transform:scale(1.04);animation:slowzoom 14s ease-in-out infinite alternate}
+@keyframes slowzoom{from{transform:scale(1.04)}to{transform:scale(1.00)}}
+.hero-tint{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 55% 40%,rgba(120,10,10,0.22) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(80,0,60,0.15) 0%,transparent 60%),linear-gradient(to bottom,rgba(10,4,14,0.2) 0%,rgba(10,4,14,0) 35%,rgba(10,4,14,0.92) 100%)}
+.hero-sweep{position:absolute;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,rgba(192,57,43,0.55) 50%,transparent);animation:sweep 7s linear infinite;opacity:0}
+@keyframes sweep{0%{top:-2px;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:100%;opacity:0}}
+.hero-freq{position:absolute;right:56px;top:50%;transform:translateY(-50%);display:flex;gap:3px;align-items:center;z-index:10}
+.fbar{width:2px;background:var(--red);opacity:0.5;animation:fb var(--d) ease-in-out infinite alternate}
+@keyframes fb{0%{height:var(--lo)}100%{height:var(--hi)}}
+.hero-content{position:relative;z-index:10;padding:0 52px 80px}
+
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,17vw,15rem);line-height:0.85;color:#ffffff;opacity:0;animation:fadeup 1.2s cubic-bezier(0.16,1,0.3,1) 0.1s forwards}
+.hero-name .bang{color:#ffffff;display:inline-block;animation:bangpulse 2.5s ease-in-out infinite}
+@keyframes bangpulse{0%,100%{text-shadow:0 0 20px rgba(192,57,43,0.7)}50%{text-shadow:0 0 80px rgba(192,57,43,1),0 0 130px rgba(192,57,43,0.3)}}
+.hero-sub{font-size:clamp(0.85rem,1.2vw,0.98rem);font-style:normal;font-weight:300;color:#ffffff;max-width:460px;line-height:1.65;margin-top:20px;opacity:0;animation:fadeup 1.5s ease 1s forwards}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes fi{to{opacity:1}}
+
+
+50%{opacity:1}}
+
+/* MARQUEE */
+
+
+
+
+100%{transform:translateX(-50%)}}
+
+/* SECTION LABEL */
+.section-label{font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.4em;color:#ffffff;text-transform:uppercase;display:flex;align-items:center;gap:14px;margin-bottom:52px}
+.section-label::before{content:'';width:36px;height:1px;background:#ffffff;flex-shrink:0}
+
+/* ABOUT */
+#about{position:relative;z-index:3;padding:120px 52px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;overflow:visible}
+.about-img-wrap{position:relative;align-self:stretch;overflow:hidden;}
+
+
+.about-img-fade{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(to right, transparent 0%, transparent 70%, rgba(10,4,14,1) 100%),
+    linear-gradient(to bottom, rgba(10,4,14,0.3) 0%, transparent 15%, transparent 65%, rgba(10,4,14,1) 100%),
+    linear-gradient(to top, transparent 0%, transparent 90%, rgba(10,4,14,0.4) 100%);
+}
+/* KEY FIX: image fills the wrapper, cropped from top so face is visible */
+.about-main-img{
+  width:100%;
+  height:100%;
+  min-height:700px;
+  object-fit:cover;
+  object-position:center 35%;
+  display:block;
+  filter:contrast(1.02) brightness(0.85);
+}
+
+.about-right{padding-top:12px;padding-right:52px;padding-left:52px}
+.about-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,4.5vw,4.8rem);line-height:0.9;color:#ffffff;margin-bottom:32px}
+.about-heading .dim{color:#ffffff;font-size:0.58em;display:block;margin-top:8px;letter-spacing:0.05em}
+.about-body{font-size:clamp(0.88rem,1.1vw,0.98rem);font-weight:300;line-height:1.85;color:#ffffff;margin-bottom:22px}
+.about-body em{color:#ffffff;font-style:italic}
+
+
+
+
+
+
+
+
+/* PHOTO SPLIT — fixed height, no gap */
+
+
+
+
+/* GALLERY */
+#gallery{position:relative;z-index:3;padding:100px 52px}
+.gallery-inner{max-width:1240px;margin:0 auto}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:280px 280px 280px;
+  gap:3px;
+}
+.gallery-item{overflow:hidden;cursor:pointer;position:relative;background:rgba(12,4,16,0.85)}
+/* Tall item spans 2 rows */
+.gallery-item.tall{grid-row:span 2}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:contrast(1.05) brightness(0.88);
+  transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.5s;
+}
+.gallery-item:hover img{transform:scale(1.05);filter:contrast(1.1) brightness(1.0)}
+
+
+
+
+
+
+
+
+/* BEYOND VOID */
+#beyond-void{position:relative;z-index:3;padding:80px 52px;background:#0a060c;border-top:1px solid rgba(255,255,255,0.04)}
+.bv-inner{max-width:1240px;margin:0 auto}
+.bv-text-only{max-width:740px;margin-bottom:40px}
+
+.bv-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,6vw,6.5rem);line-height:0.92;color:#ffffff;margin-bottom:24px}
+.bv-heading .accent{color:#ffffff;display:block}
+
+.bv-logo{
+  width:100%;
+  max-width:260px;
+  height:auto;
+  display:block;
+  margin-bottom:28px;
+  filter:brightness(1) invert(0);
+}
+.bv-desc{font-size:0.92rem;font-style:normal;font-weight:300;color:#ffffff;line-height:1.8;margin-bottom:36px}
+.artists-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.05)}
+.artist-tag{background:rgba(8,3,12,0.75);padding:18px 20px;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:0.1em;color:#ffffff;transition:all 0.3s;cursor:default}
+.artist-tag:hover{background:rgba(192,57,43,0.07);color:#ffffff}
+
+
+/* YouTube thumbnail cards */
+.yt-thumb-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.yt-thumb-card{display:block;text-decoration:none;overflow:hidden;background:#0a060c;transition:transform 0.3s}
+.yt-thumb-card:hover{transform:translateY(-2px)}
+.yt-thumb-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/9}
+.yt-thumb-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s,filter 0.4s;filter:brightness(0.85)}
+.yt-thumb-card:hover .yt-thumb-img{transform:scale(1.03);filter:brightness(1)}
+.yt-thumb-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;transition:background 0.3s}
+.yt-thumb-card:hover .yt-thumb-overlay{background:rgba(0,0,0,0.15)}
+.yt-play-btn{width:52px;height:52px;border-radius:50%;background:rgba(255,0,0,0.85);display:flex;align-items:center;justify-content:center;color:#fff;transition:transform 0.3s,background 0.3s}
+.yt-thumb-card:hover .yt-play-btn{transform:scale(1.1);background:rgba(255,0,0,1)}
+.yt-thumb-info{padding:12px 14px 14px}
+.yt-thumb-title{display:block;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:#ffffff;margin-bottom:4px}
+.yt-thumb-sub{font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;color:rgba(255,255,255,0.45);text-transform:uppercase}
+/* MEDIA */
+#media{position:relative;z-index:3;padding:100px 52px}
+.media-inner{max-width:1240px;margin:0 auto}
+.media-block{margin-bottom:48px}
+.media-block:last-child{margin-bottom:0}
+.media-cat{font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.35em;color:#ffffff;text-transform:uppercase;margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.media-links-col{display:flex;flex-direction:column;gap:2px}
+.media-link-card{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;background:rgba(12,4,16,0.85);border:1px solid rgba(255,255,255,0.05);text-decoration:none;position:relative;overflow:hidden;transition:border-color 0.3s}
+.media-link-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(192,57,43,0.05);transition:width 0.4s ease}
+.media-link-card:hover::before{width:100%}
+.media-link-card:hover{border-color:rgba(192,57,43,0.3)}
+.mlc-left{display:flex;align-items:center;gap:20px;position:relative;z-index:1}
+.mlc-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity 0.3s}
+.yt-icon{background:rgba(192,57,43,0.1);color:#ffffff}
+.sc-icon{background:rgba(255,85,0,0.08);color:#ff5500}
+.media-link-card:hover .mlc-icon{opacity:1}
+.mlc-info{display:flex;flex-direction:column;gap:5px}
+.mlc-title{font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:400;color:#ffffff;line-height:1.2}
+.mlc-sub{font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:0.15em;color:#ffffff;text-transform:uppercase}
+.mlc-arrow{font-size:1.1rem;color:rgba(255,255,255,0.4);transition:all 0.3s;position:relative;z-index:1;flex-shrink:0}
+.media-link-card:hover .mlc-arrow{color:#ffffff;transform:translateX(4px)}
+
+
+.contact-logo-icon{
+  width:52px;height:52px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.06);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:#ffffff;
+  transition:background 0.3s;
+}
+.contact-link:hover .contact-logo-icon{background:rgba(255,255,255,0.12);}
+.contact-link-info{display:flex;flex-direction:column;gap:4px;flex:1}
+.contact-link-name{font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;color:#ffffff;text-transform:uppercase}
+.contact-link-handle{font-family:'DM Sans',sans-serif;font-size:0.88rem;color:rgba(255,255,255,0.55)}
+/* CONTACT */
+#contact{position:relative;z-index:3;padding:100px 52px;border-top:1px solid rgba(255,255,255,0.05);background:#0a060c}
+.contact-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.contact-left .big-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,6vw,6.5rem);line-height:0.88;color:#ffffff}
+.contact-left .big-text span{color:#ffffff}
+.contact-left p{font-size:0.9rem;font-style:normal;font-weight:300;color:#ffffff;margin-top:24px;line-height:1.7}
+.contact-right{display:flex;flex-direction:column;gap:14px}
+.contact-link{display:flex;align-items:center;gap:18px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);text-decoration:none;position:relative;overflow:hidden;transition:border-color 0.3s}
+.contact-link::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(192,57,43,0.05);transition:width 0.4s ease}
+.contact-link:hover::before{width:100%}
+.contact-link:hover{border-color:rgba(192,57,43,0.3)}
+.link-platform{display:none}
+.link-url{display:none}
+.contact-link:hover .link-url{color:#ffffff}
+.link-arrow{margin-left:auto;font-size:1.1rem;color:rgba(255,255,255,0.4);transition:all 0.3s;position:relative;z-index:1}
+.contact-link:hover .link-arrow{color:#ffffff;transform:translateX(4px)}
+
+/* FOOTER */
+footer{position:relative;z-index:3;padding:36px 52px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.04);flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.3em;color:#ffffff}
+.footer-logo span{color:#ffffff}
+.footer-copy{font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.2em;color:rgba(255,255,255,0.5)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(4,4,8,0.97);z-index:9000;align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:88vw;max-height:90vh;object-fit:contain;display:block}
+.lightbox-close{position:absolute;top:24px;right:36px;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#ffffff;cursor:pointer;letter-spacing:0.1em;transition:color 0.2s;z-index:1}
+.lightbox-close:hover{color:#ffffff}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:20px 24px}
+  
+  .hero-content{padding:0 24px 60px}
+  .hero-freq{display:none}
+  #about{padding:80px 24px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-main-img{
+  width:100%;
+  height:100%;
+  min-height:700px;
+  object-fit:cover;
+  object-position:center 35%;
+  display:block;
+  filter:contrast(1.02) brightness(0.85);
+}
+  
+  
+  
+  
+  
+  #gallery{padding:80px 24px}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery-item.tall{grid-row:span 1}
+  #beyond-void{padding:80px 24px}
+  .artists-list{grid-template-columns:repeat(2,1fr)}
+  #media{padding:80px 24px}
+  .yt-thumb-grid{grid-template-columns:1fr}
+  #contact{padding:80px 24px}
+  .contact-inner{grid-template-columns:1fr;gap:48px}
+  
+  
+  footer{padding:28px 24px}
+}
+@media(max-width:600px){
+  
+  
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}
+  .media-grid{grid-template-columns:1fr}
+}
+
+
+.nav-links a.nav-active{color:#ffffff !important}
+.footer-logo span{color:#ffffff}
+.footer-nav{display:flex;gap:32px}
+.footer-nav a{font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-decoration:none;text-transform:uppercase;transition:color 0.3s}
+.footer-nav a:hover{color:#ffffff}
+
+
+
+#contact{padding-top:140px;min-height:80vh}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<nav>
+  <a href="index.html" class="nav-logo">VAN<span>!</span>SH</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="media.html">Recordings</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="contact.html" class="nav-active">Contact</a></li>
+    
+  </ul>
+</nav>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="big-text">Get In<br><span>Touch</span></div>
+      <p>For bookings, collaborations, and Beyond Void enquiries.</p>
+    </div>
+    <div class="contact-right">
+
+      <a href="https://www.instagram.com/vanish.official_" target="_blank" class="contact-link">
+        <div class="contact-logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </div>
+        <div class="contact-link-info">
+          <span class="contact-link-name">Instagram</span>
+          <span class="contact-link-handle">@vanish.official_</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="mailto:Vanishofficial25@gmail.com" class="contact-link">
+        <div class="contact-logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="contact-link-info">
+          <span class="contact-link-name">Email</span>
+          <span class="contact-link-handle">Vanishofficial25@gmail.com</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="https://wa.me/919702919128" target="_blank" class="contact-link">
+        <div class="contact-logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="contact-link-info">
+          <span class="contact-link-name">WhatsApp</span>
+          <span class="contact-link-handle">+91 97029 19128</span>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-logo">VAN<span>!</span>SH</div>
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="media.html">Recordings</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 VAN!SH · Beyond Void · Mumbai</div>
+</footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lb-img" src="" alt="">
+</div>
+<script>
+
+
+  function openLightbox(el) {
+    document.getElementById('lb-img').src = el.querySelector('img').src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) { if(e.key==='Escape') closeLightbox(); });
+
+  var revealEls = document.querySelectorAll('.artist-tag,.media-card,.gallery-item');
+
+  revealEls.forEach(function(el, i) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease ' + ((i % 6) * 0.06) + 's, transform 0.5s ease ' + ((i % 6) * 0.06) + 's';
+  });
+
+  function revealAll() {
+    revealEls.forEach(function(el) {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
+    revealEls.forEach(function(el) { obs.observe(el); });
+    // Fallback: reveal everything after 2s in case observer never fires
+    setTimeout(revealAll, 2000);
+  } else {
+    revealAll();
+  }
+
+
+</script>
+</body>
+</html>
